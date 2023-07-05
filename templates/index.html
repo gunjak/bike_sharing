@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gemstone Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <a href="https://github.com/utkarshg1/mlproject_regression" class="top-left-link" target="_blank">GitHub Repository Link</a>
+    <h1>Gemstone Price Prediction - Utkarsh Gaikwad</h1>
+    <img src="{{url_for('static', filename='/Image/your_profile_pic.jpg')}}" alt="Your Profile Picture" class="profile">
+    <div class="form-box">
+    <form action="{{url_for('predict_datapoint')}}" method="POST">
+        <div class="form-group">
+            <label for="carat">Carat:</label>
+            <input type="text" id="carat" name="carat" placeholder="Enter carat value (float)">
+        </div>
+    
+        <div class="form-group">
+            <label for="depth">Depth:</label>
+            <input type="text" id="depth" name="depth" placeholder="Enter depth value (float)">
+        </div>
+
+        <div class="form-group">  
+            <label for="table">Table:</label>
+            <input type="text" id="table" name="table" placeholder="Enter table value (float)">
+        </div>
+        
+        <div class="form-group">
+            <label for="x">x:</label>
+            <input type="text" id="x" name="x" placeholder="Enter x value (float)">
+        </div>
+      
+        <div class="form-group">
+            <label for="y">y:</label>
+            <input type="text" id="y" name="y" placeholder="Enter y value (float)">
+        </div>
+      
+        <div class="form-group">
+            <label for="z">z:</label>
+            <input type="text" id="z" name="z" placeholder="Enter z value (float)">
+        </div>         
+      
+    <div class="form-group">
+      <label for="cut">Cut:</label>
+      <select id="cut" name="cut">
+        <option value="Fair">Fair</option>
+        <option value="Good">Good</option>
+        <option value="Very Good">Very Good</option>
+        <option value="Premium">Premium</option>
+        <option value="Ideal">Ideal</option>
+      </select>
+    </div>
+
+      <div class="form-group">
+      <label for="season">season:</label>
+      <select id="season" name="season">
+        <option value=1>winter</option>
+        <option value=2>spring</option>
+        <option value=3>summer</option>
+        <option value=4>fall</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+        <label for="mnth">Month:</label>
+        <select id="mnth" name="mnth">
+          <option value=1>jan</option>
+          <option value=2>Feb</option>
+          <option value=3>March</option>
+          <option value=4>April</option>
+          <option value=5>May</option>
+          <option value=6>June</option>
+          <option value=7>July</option>
+          <option value=8>Aug</option>
+          <option value=9>Sep</option>
+          <option value=10>Oct</option>
+          <option value=11>Nov</option>
+          <option value=12>Dec</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="holiday">holiday:</label>
+        <select id="holiday" name="holiday">
+          <option value=1>yes</option>
+          <option value=0>no</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="weekday">weekday:</label>
+        <select id="weekday" name="weekday">
+          <option value=0>sun</option>
+          <option value=1>mon</option>
+          <option value=2>tue</option>
+          <option value=3>wed</option>
+          <option value=4>thu</option>
+          <option value=5>fri</option>
+          <option value=6>sat</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="workingday">workingday:</label>
+        <select id="workingday" name="workingday">
+          <option value=1>yes</option>
+          <option value=0>no</option>
+        </select>
+      </div>
+            
+    
+    <div style="clear:both;"></div>
+      <input type="submit" value="Submit">
+    </form>
+    </div>
+    <div>      
+    <h2>
+      Predicted Gemstone Price is : {{ results }}
+    </h2>
+  </body>

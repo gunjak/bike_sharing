@@ -1,45 +1,45 @@
-from src.pipeline.predict import CustomData, PredictPipeline
-import streamlit as st
+from flask import Flask,request,render_template
+import numpy as np
+import pandas as pd
 
 
-season={'winter':0,
-        'summer':1,
-        'spring':2,
-        'fall':3}
-month={'jan':1,'feb':2,'mar':3,
-    'apr':4,'may':5,'jun':6,'july':7,
-                            'aug':8,'sep':9,'oct':10,'nov':11,'dec':12}
-day={'yes':1,'no':0}
-weather={'clear':1,'cloudy':2,'light_snow':3,'heavy rain':4}
+from src.pipeline.predict import CustomData,PredictPipeline
 
+application=Flask(__name__)
 
-style = """<div style='background-color:pink; padding:12px'>
-              <h1 style='color:black'>Bike Sharing Prediction App</h1>
-       </div>"""
-st.markdown(style, unsafe_allow_html=True)
+app=application
 
-data = CustomData(
-            season = season[st.selectbox('season',('winter','summer','spring','fall'))],
-            mnth = month[st.selectbox('month',('jan','feb','mar',
-                            'apr','may','jun','july',
-                            'aug','sep','oct','nov','dec'))],
-            holiday= day[st.selectbox('Is there holiday',('yes','no'))],
-            weekday= day[st.selectbox('weekday',('yes','no'))],
-            workingday= day[st.selectbox('workingday',('yes','no'))],
-            weathersit= weather[st.selectbox('weather',('clear','cloudy','light_snow','heavy rain'))],
-            temp= st.number_input('temperature'),
-            atemp= st.number_input('feeling temperature'),
-            hum = st.number_input('humidity'),
-            windspeed=st.number_input('windspeed')
-        )
+## Route for a home page
 
+@app.route('/')
+def index():
+    return render_template('index.html') 
 
-button = st.button('Predict')
-if button:
-    pred_df = data.get_data_as_dataframe()
-    predict_pipeline = PredictPipeline()
-    pred = predict_pipeline.predict(pred_df)
-    results = round(pred[0])
-    st.success(f'total rental bikes including both casual and registered {results}')
+@app.route('/predictdata',methods=['GET','POST'])
+def predict_datapoint():
+    if request.method=='GET':
+        return render_template('home.html')
+    else:
+        data=CustomData(
+            season=int(request.form.get('season')),
+            mnth=int(request.form.get('mnth')),
+            holiday=int(request.form.get('holiday')),
+            weekday=int(request.form.get('weekday')),
+            workingday=int(request.form.get('workingday')),
+            weathersit=int(request.form.get('weathersit')),
+            temp=float(request.form.get('temp')),
+            atemp=float(request.form.get('atemp')),
+            hum=float(request.form.get('hum')),
+            windspeed=float(request.form.get('windspeed')))
+        
+        pred_df=data.get_data_as_dataframe()
+        print(pred_df)
+
+        predict_pipeline=PredictPipeline()
+        results=predict_pipeline.predict(pred_df)
+        return render_template('index.html',results=results[0])
     
     
+
+if __name__=="__main__":      
+    app.run(host="0.0.0.0",port=80)   

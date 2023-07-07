@@ -1,0 +1,98 @@
+[2023-07-02 15:19:53,976: INFO: data_ingestion: Data Ingestion method starts]
+[2023-07-02 15:19:53,994: INFO: data_ingestion: Dataset read as pandas Dataframe]
+[2023-07-02 15:19:54,020: INFO: data_ingestion: Raw data is created]
+[2023-07-02 15:19:54,042: INFO: data_ingestion: Ingestion of Data is completed]
+[2023-07-02 15:22:00,141: INFO: data_ingestion: Data Ingestion method starts]
+[2023-07-02 15:22:00,155: INFO: data_ingestion: Dataset read as pandas Dataframe]
+[2023-07-02 15:22:00,181: INFO: data_ingestion: Raw data is created]
+[2023-07-02 15:22:00,206: INFO: data_ingestion: Ingestion of Data is completed]
+[2023-07-02 15:22:00,207: INFO: model_trainer: Splitting Dependent and Independent variables from train and test data]
+[2023-07-02 15:22:00,208: INFO: model_trainer: Exception occured at Model Training]
+[2023-07-02 15:24:29,804: INFO: data_ingestion: Data Ingestion method starts]
+[2023-07-02 15:24:29,818: INFO: data_ingestion: Dataset read as pandas Dataframe]
+[2023-07-02 15:24:29,834: INFO: data_ingestion: Raw data is created]
+[2023-07-02 15:24:29,861: INFO: data_ingestion: Ingestion of Data is completed]
+[2023-07-02 15:24:29,862: INFO: model_trainer: Splitting Dependent and Independent variables from train and test data]
+[2023-07-02 15:24:29,864: INFO: model_trainer: Exception occured at Model Training]
+[2023-07-02 15:24:44,177: INFO: data_ingestion: Data Ingestion method starts]
+[2023-07-02 15:24:44,188: INFO: data_ingestion: Dataset read as pandas Dataframe]
+[2023-07-02 15:24:44,214: INFO: data_ingestion: Raw data is created]
+[2023-07-02 15:24:44,242: INFO: data_ingestion: Ingestion of Data is completed]
+[2023-07-02 15:24:44,245: INFO: model_trainer: Splitting Dependent and Independent variables from train and test data]
+[2023-07-02 15:24:44,250: INFO: utils: Exception occured during model training]
+[2023-07-02 15:24:44,255: INFO: model_trainer: Exception occured at Model Training]
+[2023-07-02 15:25:55,167: INFO: data_ingestion: Data Ingestion method starts]
+[2023-07-02 15:25:55,178: INFO: data_ingestion: Dataset read as pandas Dataframe]
+[2023-07-02 15:25:55,201: INFO: data_ingestion: Raw data is created]
+[2023-07-02 15:25:55,220: INFO: data_ingestion: Ingestion of Data is completed]
+[2023-07-02 15:25:55,222: INFO: model_trainer: Splitting Dependent and Independent variables from train and test data]
+[2023-07-02 15:25:56,187: INFO: model_trainer: Model Report : {'LinearRegression': 0.8112257766076474, 'Lasso': 0.8182315973022849, 'Ridge': 0.8204436798832163, 'Elasticnet': 0.41813359699745156, 'DecisionTree': 0.8391150509504437, 'RandomForest': 0.8932181413999427}]
+[2023-07-02 15:25:56,190: INFO: model_trainer: Best Model Found , Model Name : RandomForest , R2 Score : 0.8932181413999427]
+[2023-07-06 00:09:54,864: INFO: predict: Dataframe Gathered]
+[2023-07-06 00:09:56,776: INFO: predict: Exception occured in prediction pipeline]
+[2023-07-06 00:16:43,187: INFO: predict: Dataframe Gathered]
+[2023-07-06 00:16:43,665: INFO: predict: Exception occured in prediction pipeline]
+[2023-07-06 00:21:15,725: INFO: data_ingestion: Data Ingestion method starts]
+[2023-07-06 00:21:15,757: INFO: data_ingestion: Dataset read as pandas Dataframe]
+[2023-07-06 00:21:15,792: INFO: data_ingestion: Raw data is created]
+[2023-07-06 00:21:15,820: INFO: data_ingestion: Ingestion of Data is completed]
+[2023-07-06 00:21:15,821: INFO: model_trainer: Splitting Dependent and Independent variables from train and test data]
+[2023-07-06 00:21:17,010: INFO: model_trainer: Model Report : {'LinearRegression': 0.5019216083276796, 'Lasso': 0.5275707875608848, 'Ridge': 0.530306735495619, 'Elasticnet': 0.23647469599038495, 'DecisionTree': 0.2978768637519761, 'RandomForest': 0.6088614694064156}]
+[2023-07-06 00:21:17,012: INFO: model_trainer: Best Model Found , Model Name : RandomForest , R2 Score : 0.6088614694064156]
+[2023-07-06 00:23:01,905: INFO: predict: Dataframe Gathered]
+[2023-07-07 11:22:40,515: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://192.168.43.177:80]
+[2023-07-07 11:22:40,518: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-07 11:23:18,228: INFO: _internal: 192.168.43.177 - - [07/Jul/2023 11:23:18] "GET / HTTP/1.1" 200 -]
+[2023-07-07 11:23:18,359: INFO: _internal: 192.168.43.177 - - [07/Jul/2023 11:23:18] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -]
+[2023-07-07 11:23:18,583: INFO: _internal: 192.168.43.177 - - [07/Jul/2023 11:23:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2023-07-07 11:24:10,742: ERROR: app: Exception on /predictdata [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Gunja\Desktop\bike_sharing\venv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Gunja\Desktop\bike_sharing\venv\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Gunja\Desktop\bike_sharing\venv\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Gunja\Desktop\bike_sharing\venv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "app1.py", line 35, in predict_datapoint
+    pred_df=data.get_data_as_data_frame()
+AttributeError: 'CustomData' object has no attribute 'get_data_as_data_frame'
+[2023-07-07 11:24:10,765: INFO: _internal: 192.168.43.177 - - [07/Jul/2023 11:24:10] "[35m[1mPOST /predictdata HTTP/1.1[0m" 500 -]
+[2023-07-07 11:25:45,131: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://192.168.43.177:80]
+[2023-07-07 11:25:45,134: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-07 11:26:01,249: INFO: _internal: 192.168.43.177 - - [07/Jul/2023 11:26:01] "GET / HTTP/1.1" 200 -]
+[2023-07-07 11:26:01,271: INFO: _internal: 192.168.43.177 - - [07/Jul/2023 11:26:01] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -]
+[2023-07-07 11:26:19,747: INFO: predict: Dataframe Gathered]
+[2023-07-07 11:26:22,306: INFO: _internal: 192.168.43.177 - - [07/Jul/2023 11:26:22] "POST /predictdata HTTP/1.1" 200 -]
+[2023-07-07 11:26:22,361: INFO: _internal: 192.168.43.177 - - [07/Jul/2023 11:26:22] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -]
+[2023-07-07 11:32:01,573: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://192.168.43.177:80]
+[2023-07-07 11:32:01,579: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-07 11:32:06,991: INFO: _internal: 192.168.43.177 - - [07/Jul/2023 11:32:06] "GET / HTTP/1.1" 200 -]
+[2023-07-07 11:32:07,016: INFO: _internal: 192.168.43.177 - - [07/Jul/2023 11:32:07] "[33mGET /static/static/style.css HTTP/1.1[0m" 404 -]
+[2023-07-07 11:32:43,537: INFO: _internal: 192.168.43.177 - - [07/Jul/2023 11:32:43] "GET / HTTP/1.1" 200 -]
+[2023-07-07 11:32:43,571: INFO: _internal: 192.168.43.177 - - [07/Jul/2023 11:32:43] "[33mGET /static/static/style.css HTTP/1.1[0m" 404 -]
+[2023-07-07 11:41:03,007: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://192.168.43.177:80]
+[2023-07-07 11:41:03,011: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-07 11:41:08,816: INFO: _internal: 127.0.0.1 - - [07/Jul/2023 11:41:08] "GET / HTTP/1.1" 200 -]
+[2023-07-07 11:41:08,848: INFO: _internal: 127.0.0.1 - - [07/Jul/2023 11:41:08] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -]
+[2023-07-07 11:41:09,824: INFO: _internal: 127.0.0.1 - - [07/Jul/2023 11:41:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2023-07-07 11:45:04,049: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://192.168.43.177:80]
+[2023-07-07 11:45:04,053: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-07 11:45:09,401: INFO: _internal: 192.168.43.177 - - [07/Jul/2023 11:45:09] "GET / HTTP/1.1" 200 -]
+[2023-07-07 11:45:09,423: INFO: _internal: 192.168.43.177 - - [07/Jul/2023 11:45:09] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -]

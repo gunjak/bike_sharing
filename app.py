@@ -15,8 +15,6 @@ CORS(app)
 
 
 
-## Route for a home page
-
 @app.route('/')
 @cross_origin()
 def index():
